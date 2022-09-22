@@ -1,0 +1,11 @@
+#people-container {
+    display:flex;
+    border: 2px solid black;
+}
+
+.perosn {
+    background-color: greenyellow;
+    font-family: sans-serif;
+    padding: 10px;
+    border: 4px solid white;
+}
