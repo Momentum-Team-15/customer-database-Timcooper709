@@ -2,6 +2,8 @@ console.log("Hello, World!");
 
 const customerContainer = document.querySelector("#customer_container")
 
+const customer = "myName";
+
 
 for (let customer of customers) {
     let customerDiv = document.createElement("div");
@@ -19,10 +21,13 @@ for (let customer of customers) {
     myName.innerText = `${customer.name.title} ${customer.name.first} ${customer.name.last}`;
     customerEmail.innerText = `${customer.email}`;
     customerAddressLineOne.innerText = `${customer.location.street.number} ${customer.location.street.name}`;
-    customerAddressLineTwo.innerText = `${customer.location.city}, ${customer.location.state}`;
-    customerDOB.innerText = `DOB: ${moment.utc(customer.dob.date)}`;
-    customerSince.innerText = `Customer Since: ${moment.utc(customer.registered.date)}`;
+    customerAddressLineTwo.innerText = `${customer.location.city}, ${nameToAbbr(customer.location.state)}`;
+    customerDOB.innerText = `DOB: ${moment(customer.dob.date).format('MMMM Do YYYY')}`;
+    customerSince.innerText = `Customer Since: ${moment(customer.registered.date).format('MMMM Do YYYY')}`;
     console.log("custmoer card created");
+    
+    
+
 
 
 
@@ -43,8 +48,8 @@ for (let customer of customers) {
 
     customerDiv.classList.add("customer");
 
-
-
 }
+
+
 
 
